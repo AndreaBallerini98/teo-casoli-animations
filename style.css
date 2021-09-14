@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body html {
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 34% 33% 33%;
+    grid-template-rows: 45% 45% 45% 45%;
+    grid-template-areas: "side vid1 vid2" "side vid3 vid4" "side vid5 vid6" "side vid7 vid8";
+}
+
+nav {
+    grid-area: side;
+    height: 100vh;
+    position: fixed;
+    margin-left: 6%;
+}
+
+#video1 {
+    grid-area: vid1;
+}
+
+#video2 {
+    grid-area: vid2;
+}
+
+#video3 {
+    grid-area: vid3;
+}
+
+#video4 {
+    grid-area: vid4;
+}
+
+#video5 {
+    grid-area: vid5;
+}
+
+#video6 {
+    grid-area: vid6;
+}
+
+#video7 {
+    grid-area: vid7;
+}
+
+#video8 {
+    grid-area: vid8;
+}
+
+.gif {
+    height: 40%;
+    margin: 24px;
+}
+
+.menu {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 6%;
+}
+
+.menu:hover {
+    filter: invert(97%) sepia(91%) saturate(1056%) hue-rotate(282deg) brightness(101%) contrast(100%);
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    height: 95%;
+}
+
+.thumbnail:hover .fade {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    opacity: 0.4;
+    transition: .9s;
+}
+
+.title {
+    width: 90%;
+    visibility: hidden;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -340px;
+    filter: none;
+    z-index: 5;
+}
+
+.thumbnail:hover .title {
+    visibility: visible;
+    opacity: 1;
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.paolo {
+    float: right;
+    width: 60%;
+    margin-right: 6%;
+}
+
+.description {
+    height: 100%;
+    float: right;
+}
+
+.never {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.never:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.right {
+    float: right;
+    width: 63%;
+    height: max-content;
+}
+
+.big {
+    width: 95%;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .container {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 45% 45% 45% 45% 45% 45% 45% 45%;
+        grid-template-areas: "side vid1" "side vid2" "side vid3" "side vid4" "side vid5" "side vid6" "side vid7" "side vid8";
+    }
+    nav {
+        position: fixed;
+        height: 100vh;
+        min-height: 100vh;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-rows: 100% 35% 35% 35% 35% 35% 35% 35%;
+        grid-template-areas: "side" "vid1" "vid2" "vid3" "vid4" "vid5" "vid6" "vid7" "vid8";
+        row-gap: 5%;
+    }
+    nav {
+        position: relative;
+    }
+    .title {
+        display: none;
+    }
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.wrapper {
+    display: inline-flex;
+}
+
+.wrapper .icon {
+    margin: 0 20px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    color: #540000;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon span {
+    display: block;
+    height: 60px;
+    width: 60px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon span i {
+    line-height: 60px;
+    font-size: 25px;
+}
+
+.wrapper .icon .tooltip {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.icon .tooltip:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) rotate(45deg);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover span {
+    color: #fff;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.wrapper .twitter:hover span,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip:before {
+    background: #1da1f2;
+}
+
+.wrapper .instagram:hover span,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip:before {
+    background: #e1306c;
+}
+
+.wrapper .vimeo:hover span,
+.wrapper .vimeo:hover .tooltip,
+.wrapper .vimeo:hover .tooltip:before {
+    background: #1a2e3a;
+}
+
+.wrapper .behance:hover span,
+.wrapper .behance:hover .tooltip,
+.wrapper .behance:hover .tooltip:before {
+    background: black;
+}
